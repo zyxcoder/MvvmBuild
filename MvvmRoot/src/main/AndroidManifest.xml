@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zyxcoder.mvvmroot">
+
+    <application>
+        <provider
+            android:name="com.zyxcoder.mvvmroot.base.ObserverContentProvider"
+            android:authorities="${applicationId}.ObserverContentProvider"
+            android:exported="false" />
+    </application>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+</manifest>
