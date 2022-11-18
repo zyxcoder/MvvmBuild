@@ -8,7 +8,7 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.widget.Toast
 import com.zyxcoder.mvvmroot.R
-import kotlinx.android.synthetic.main.layout_bazirim_toast.view.*
+import kotlinx.android.synthetic.main.layout_app_toast.view.*
 
 /**
  * Create by zyx_coder on 2022/11/18
@@ -35,7 +35,7 @@ object ToastUtils {
                 currentToast.setGravity(gravity, 0, 0)
                 val toastLayout =
                     (context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater)
-                        .inflate(R.layout.layout_bazirim_toast, null)
+                        .inflate(R.layout.layout_app_toast, null)
                 toastLayout.apply {
                     tvToastContent.text = message
                 }
