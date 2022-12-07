@@ -2,7 +2,6 @@ package com.zyxcoder.mvvmroot.base.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.zyxcoder.mvvmroot.callback.livedata.event.EventLiveData
-import kotlinx.coroutines.Job
 
 /**
  * Create by zyx_coder on 2022/11/17

@@ -1,25 +1,22 @@
 package com.zyxcoder.mvvmroot.callback.lifecycle
 
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import com.zyxcoder.mvvmroot.callback.livedata.data.BooleanLiveData
 
 /**
  * Create by zyx_coder on 2022/11/17
  */
-object AppLifeObserver : LifecycleObserver {
+object AppLifeObserver : DefaultLifecycleObserver {
     var isForeground = BooleanLiveData()
 
     //app在前台
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
-    private fun onForeground() {
+    override fun onStart(owner: LifecycleOwner) {
         isForeground.value = true
     }
 
     //app在后台
-    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
-    private fun onBackground() {
+    override fun onStop(owner: LifecycleOwner) {
         isForeground.value = false
     }
 }

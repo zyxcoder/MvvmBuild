@@ -24,7 +24,7 @@ object ToastUtils {
      * @param gravity toast位置
      */
     @SuppressLint("InflateParams")
-    fun showBazirimToast(context: Context?, message: String, gravity: Int) {
+    fun showMvvmToast(context: Context?, message: String, gravity: Int) {
         context ?: return
         if (context is Activity && context.isFinishing) {
             return

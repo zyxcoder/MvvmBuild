@@ -32,5 +32,5 @@ fun Context?.showToast(@StringRes stringRes: Int, gravity: Int = Gravity.CENTER)
  */
 @JvmOverloads
 fun Context?.showToast(message: String, gravity: Int = Gravity.CENTER) {
-    ToastUtils.showBazirimToast(this, message, gravity)
+    ToastUtils.showMvvmToast(this, message, gravity)
 }

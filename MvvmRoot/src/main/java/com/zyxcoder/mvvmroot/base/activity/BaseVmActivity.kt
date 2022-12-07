@@ -3,8 +3,8 @@ package com.zyxcoder.mvvmroot.base.activity
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.observe
 import com.zyxcoder.mvvmroot.base.viewmodel.BaseViewModel
 import com.zyxcoder.mvvmroot.ext.getVmClazz
 import com.zyxcoder.mvvmroot.network.manager.NetState
@@ -41,9 +41,9 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
         registerUiChange()
         initView(savedInstanceState)
         createObserver()
-        NetworkStateManager.instance.netWorkStateCallback.observe(this) {
+        NetworkStateManager.instance.netWorkStateCallback.observe(this, Observer {
             onNetworkStateChanged(it)
-        }
+        })
     }
 
     /**
@@ -68,13 +68,13 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
      */
     private fun registerUiChange() {
         //显示弹窗
-        mViewModel.loadingChange.showDialog.observe(this) {
+        mViewModel.loadingChange.showDialog.observe(this, Observer {
             showLoading(it)
-        }
+        })
         //关闭弹窗
-        mViewModel.loadingChange.dismissDialog.observe(this) {
+        mViewModel.loadingChange.dismissDialog.observe(this, Observer {
             dismissLoading()
-        }
+        })
     }
 
     /**
@@ -84,13 +84,13 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
     protected fun addLoadingObserve(vararg viewModels: BaseViewModel) {
         viewModels.forEach { viewModel ->
             //显示弹窗
-            viewModel.loadingChange.showDialog.observe(this) {
+            viewModel.loadingChange.showDialog.observe(this, Observer {
                 showLoading(it)
-            }
+            })
             //关闭弹窗
-            viewModel.loadingChange.dismissDialog.observe(this) {
+            viewModel.loadingChange.dismissDialog.observe(this, Observer {
                 dismissLoading()
-            }
+            })
         }
     }
 
