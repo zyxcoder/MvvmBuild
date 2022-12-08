@@ -3,6 +3,7 @@ buildscript {
     ext.kotlin_version = '1.3.72'
     repositories {
         google()
+        mavenCentral()
         //阿里云jcenter仓库
         maven{ url 'https://maven.aliyun.com/repository/jcenter' }
         maven {
@@ -18,6 +19,7 @@ buildscript {
 allprojects {
     repositories {
         google()
+        mavenCentral()
         //阿里云jcenter仓库
         maven{ url 'https://maven.aliyun.com/repository/jcenter' }
         maven {
