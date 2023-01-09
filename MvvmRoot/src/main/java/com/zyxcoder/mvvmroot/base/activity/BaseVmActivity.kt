@@ -22,6 +22,8 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
 
     abstract fun initView(savedInstanceState: Bundle?)
 
+    abstract fun initData()
+
     abstract fun showLoading(message: String = "请求网络中...")
 
     abstract fun dismissLoading()
@@ -40,6 +42,7 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
         mViewModel = createViewModel()
         registerUiChange()
         initView(savedInstanceState)
+        initData()
         createObserver()
         NetworkStateManager.instance.netWorkStateCallback.observe(this, Observer {
             onNetworkStateChanged(it)

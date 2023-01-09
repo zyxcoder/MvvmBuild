@@ -28,4 +28,7 @@ class MainActivity : BaseVmVbActivity<MainViewModel, ActivityMainBinding>() {
         }
     }
 
+    override fun initData() {
+    }
+
 }
