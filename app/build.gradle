@@ -48,4 +48,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     //Http拦截器
     implementation("com.squareup.okhttp3:logging-interceptor:4.7.2")
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.10'
 }
