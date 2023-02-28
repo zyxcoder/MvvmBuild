@@ -63,4 +63,8 @@ dependencies {
     //glide图片效果：圆角，正方形，高斯模糊等
     implementation 'jp.wasabeef:glide-transformations:4.3.0'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.10'
+    //权限请求库
+    implementation 'com.github.getActivity:XXPermissions:16.6'
+    //图片选择器
+    implementation 'com.github.donkingliang:ImageSelector:2.2.1'
 }
