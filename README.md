@@ -1,4 +1,4 @@
-[![][![](https://www.jitpack.io/v/zyxcoder/MvvmBuild.svg)](https://www.jitpack.io/#zyxcoder/MvvmBuild)
+[![](https://www.jitpack.io/v/zyxcoder/MvvmBuild.svg)](https://www.jitpack.io/#zyxcoder/MvvmBuild)
 
 ### MvvmBuild
  MvvmBuild是一个帮助快速构建MVVM架构的插件
