@@ -1,7 +1,6 @@
 package com.zyxcoder.mvvmbuild
 
 import androidx.lifecycle.MutableLiveData
-import com.zyxcoder.mvvmbuild.data.BannerData
 import com.zyxcoder.mvvmroot.base.viewmodel.BaseViewModel
 import com.zyxcoder.mvvmroot.ext.request
 import kotlinx.coroutines.Job
@@ -12,11 +11,11 @@ import kotlinx.coroutines.Job
 class MainViewModel : BaseViewModel() {
 
 
-    val testData = MutableLiveData<BannerData>()
-    fun fetchBanner() {
+    val testData = MutableLiveData<Any>()
+    fun fetchApi() {
         request<Job>(
             block = {
-                testData.value = apiService.getBanner()
+                testData.value = apiService.getApiData()
             }
         )
     }

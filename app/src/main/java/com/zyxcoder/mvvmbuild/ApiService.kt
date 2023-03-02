@@ -1,6 +1,5 @@
 package com.zyxcoder.mvvmbuild
 
-import com.zyxcoder.mvvmbuild.data.BannerData
 import retrofit2.http.GET
 
 /**
@@ -9,10 +8,10 @@ import retrofit2.http.GET
 interface ApiService {
 
     companion object {
-        const val SERVER_URL = "https://wanandroid.com/"
+        const val SERVER_URL = "http://data.live.126.net/"
     }
 
 
-    @GET("banner/json")
-    suspend fun getBanner(): BannerData
+    @GET("livechannel/previewlist.json")
+    suspend fun getApiData(): Any
 }

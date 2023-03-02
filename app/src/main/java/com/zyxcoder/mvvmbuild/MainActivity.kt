@@ -17,7 +17,7 @@ class MainActivity : BaseVmVbActivity<MainViewModel, ActivityMainBinding>() {
 
     override fun onResume() {
         super.onResume()
-        mViewModel.fetchBanner()
+        mViewModel.fetchApi()
     }
 
     override fun showLoading(message: String) {
