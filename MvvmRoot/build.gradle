@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -61,7 +61,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.14.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
     //glide图片效果：圆角，正方形，高斯模糊等
-    implementation 'jp.wasabeef:glide-transformations:4.3.0'
+    implementation 'jp.wasabeef:glide-transformations:4.2.0'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.10'
     //权限请求库
     implementation 'com.github.getActivity:XXPermissions:16.6'
