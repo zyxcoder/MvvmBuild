@@ -30,6 +30,9 @@ abstract class BaseVmFragment<VM : BaseViewModel> : Fragment() {
     //是否第一次加载
     private var isFirst: Boolean = true
 
+    //用于判断是否已经懒加载过页面
+    private var isLazyLoaded: Boolean = false
+
     lateinit var mViewModel: VM
 
     lateinit var mActivity: AppCompatActivity
@@ -108,6 +111,7 @@ abstract class BaseVmFragment<VM : BaseViewModel> : Fragment() {
                     }
                 })
                 isFirst = false
+                isLazyLoaded = true
             }, lazyLoadTime())
         }
     }
