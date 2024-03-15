@@ -31,7 +31,7 @@ abstract class BaseVmFragment<VM : BaseViewModel> : Fragment() {
     private var isFirst: Boolean = true
 
     //用于判断是否已经懒加载过页面
-    private var isLazyLoaded: Boolean = false
+    var isLazyLoaded: Boolean = false
 
     lateinit var mViewModel: VM
 
