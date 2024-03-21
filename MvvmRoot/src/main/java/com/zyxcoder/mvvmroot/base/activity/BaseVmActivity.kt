@@ -58,7 +58,7 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
      * 创建viewModel
      */
     private fun createViewModel(): VM {
-        return ViewModelProvider(this)[getVmClazz(this)]
+        return ViewModelProvider(this,ViewModelProvider.AndroidViewModelFactory.getInstance(application))[getVmClazz(this)]
     }
 
     /**
