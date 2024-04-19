@@ -6,9 +6,9 @@ import android.content.Context
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
+import android.widget.TextView
 import android.widget.Toast
 import com.zyxcoder.mvvmroot.R
-import kotlinx.android.synthetic.main.layout_app_toast.view.*
 
 /**
  * Create by zyx_coder on 2022/11/18
@@ -37,7 +37,7 @@ object ToastUtils {
                     (context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater)
                         .inflate(R.layout.layout_app_toast, null)
                 toastLayout.apply {
-                    tvToastContent.text = message
+                    findViewById<TextView>(R.id.tvToastContent).text = message
                 }
                 currentToast.view = toastLayout
                 lastToast?.cancel()

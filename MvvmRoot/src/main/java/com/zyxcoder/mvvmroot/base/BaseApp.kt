@@ -8,13 +8,15 @@ import androidx.lifecycle.ViewModelStoreOwner
 /**
  * Create by zyx_coder on 2022/11/17
  */
-open class BaseApp : Application(), ViewModelStoreOwner {
+abstract class BaseApp : Application(), ViewModelStoreOwner {
 
     private lateinit var mAppViewModelStore: ViewModelStore
 
     private var mFactory: ViewModelProvider.Factory? = null
 
-    override fun getViewModelStore(): ViewModelStore = mAppViewModelStore
+
+    override val viewModelStore: ViewModelStore
+        get() = mAppViewModelStore
 
     override fun onCreate() {
         super.onCreate()
