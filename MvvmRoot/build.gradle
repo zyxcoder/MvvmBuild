@@ -67,5 +67,5 @@ dependencies {
     implementation 'com.github.getActivity:XXPermissions:16.6'
     //图片选择器
     implementation 'com.github.donkingliang:ImageSelector:2.2.1'
-    implementation 'io.github.jeremyliao:live-event-bus-x:1.8.0'
+    implementation 'com.github.michaellee123:LiveEventBus:1.8.14'
 }
