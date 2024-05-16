@@ -51,6 +51,15 @@ fun <T> Intent.put(key: String, value: T) {
     }
 }
 
+fun Intent.putExtras(params: Map<String, Any?>? = null): Intent {
+    if (params.isNullOrEmpty()) return this
+    params.forEach { (key, value) ->
+        if (value != null) {
+            put(key, value)
+        }
+    }
+    return this
+}
 
 @SuppressLint("DiscouragedPrivateApi")
 internal object IntentFieldMethod {
