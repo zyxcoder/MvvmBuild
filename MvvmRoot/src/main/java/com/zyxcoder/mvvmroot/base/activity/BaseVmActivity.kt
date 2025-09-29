@@ -30,8 +30,9 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (initDataBind() != null) {
-            setContentView(initDataBind())
+        val viewBind = initDataBind()
+        if (viewBind != null) {
+            setContentView(viewBind)
         } else {
             setContentView(layoutId())
         }
@@ -58,7 +59,9 @@ abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
      * 创建viewModel
      */
     private fun createViewModel(): VM {
-        return ViewModelProvider(this,ViewModelProvider.AndroidViewModelFactory.getInstance(application))[getVmClazz(this)]
+        return ViewModelProvider(
+            this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)
+        )[getVmClazz(this)]
     }
 
     /**
